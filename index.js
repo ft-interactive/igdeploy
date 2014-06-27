@@ -260,7 +260,6 @@ module.exports = function (options, _callback) {
                   });
                 });
               });
-              
             });
           });
         });
