@@ -43,6 +43,11 @@ var findClosestFile = function (name) {
 
 
 module.exports = function (options, _callback) {
+  if (typeof options === 'function') {
+    _callback = options;
+    options = {};
+  }
+
   var callback = once(_callback);
 
   // process options, including any from the closest igdeploy file found
@@ -250,7 +255,7 @@ module.exports = function (options, _callback) {
                     var chmodCommand = 'chmod -R g+w "' + remoteDir + '"';
 
                     console.log(chalk.cyan('Adding group write permission:'), chmodCommand);
-                    c.exec(chmodCommand, function (err, stream) {
+                    c.exec(chmodCommand, function (err) {
                       if (err) throw err;
 
                       console.log(chalk.cyan('✔  Updated permissions\n'));
