@@ -15,6 +15,11 @@ igdeploy(options, function (err) {
 
 ### Options
 
+Options are automatically loaded from a JSON file called `.igdeploy`. It first looks for this file in the current working directory, then in the parent directory, etc. The idea is to put an `.igdeploy` file in your home directory, containing the options `username`, `password` and `host`.
+
+You can also pass options in manually as the first argument. These options are merged with the ones from your `.igdeploy` file. If any options have the same name, the ones passed into the function directly take priority.
+
+
 #### `src` (string)
 
 * Path to a local directory whose contents you want to upload.
@@ -23,7 +28,7 @@ igdeploy(options, function (err) {
 
 * A remote path to a directory, into which the files will be uploaded.
 * If it doesn't exist, it will be created with a `mkdirp -p`–like process.
-* If it does exist, it will be renamed with `__IGDEPLOY_OLD` appended to the name, for recovery purposes.
+* If it does exist, it will be renamed with `__IGDEPLOY_OLD` appended to the name, for recovery purposes (see [undo](#undo-boolean-default-false) below).
   * The previous `*__IGDEPLOY_OLD`, if present, will be rmrf'd. So you only get one 'undo' level.
 
 #### `destPrefix` (string, optional)
