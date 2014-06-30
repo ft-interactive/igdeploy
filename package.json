@@ -1,7 +1,7 @@
 {
   "name": "igdeploy",
   "version": "0.0.1",
-  "description": "",
+  "description": "FT module for deploying an interactive graphic",
   "main": "index.js",
   "author": "Callum Locke",
   "license": "MIT",
