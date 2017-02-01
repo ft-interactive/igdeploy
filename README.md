@@ -1,3 +1,9 @@
+# DEPRECATED
+
+Try [ft-graphics-deploy](https://github.com/ft-interactive/ft-graphics-deploy).
+
+---
+
 # igdeploy
 
 For internal FT use. May or may not work when deploying to other servers.
